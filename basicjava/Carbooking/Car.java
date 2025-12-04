@@ -1,51 +1,37 @@
 package com.roshan.basicjava.Carbooking;
 
 import java.util.Scanner;
+import java.io.Serializable;
 
-public class Car {
-static String arr[]={"Thar","Bolero","Car","Swift","Auto","Taxi","Indigo","Suzuki","Artiga","Tempu"};
-    String company,model,carnumber,sheets;
-    Scanner sc = new Scanner(System.in);
+public class Car implements Serializable {
 
-    public Car(String c, String m, String car , String s) {
-        
-       company=c;
-       model=m;
-       carnumber=car;
-       sheets=s;
+    private static final long serialVersionUID = 1L;
+
+    String company, model, carnumber;
+
+    public Car(String company, String model, String carnumber) {
+        this.company = company;
+        this.model = model;
+        this.carnumber = carnumber;
+
     }
 
     public Car() {
-        
-        
-       
-        System.out.print("Enter the company :");
-        company=sc.nextLine();
-        
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the company :");
+        company = sc.nextLine();
+
         System.out.print("Enter the model :");
-        model=sc.nextLine();
-        
+        model = sc.nextLine();
+
         System.out.print("Enter the carnumber :");
-        carnumber=sc.nextLine();
-        
-        System.out.println("Enter the sheets :");
-        sheets=sc.nextLine();
-
-        
-
+        carnumber = sc.nextLine();
     }
 
     @Override
     public String toString() {
-        return String.format("company=%s, model=%s, carnumber=%s ,sheets=%s", company, model,carnumber,sheets);
+        return String.format("company=%s, Model=%s, carnumber=%s", company, model, carnumber);
     }
 
-    public static void main(String[] args) {
-
-        Car c = new Car("Maruti Suzuki","xyz","up 63 6464","6");
-  
-        System.out.println(c);
-        Car c1 = new Car();
-        System.out.println(c1);
-    }
 }

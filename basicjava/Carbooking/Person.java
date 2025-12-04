@@ -1,4 +1,4 @@
-package com.roshan.basicjava.Carbooking;
+package CarbookingSystem;
 
 import java.util.Scanner;
 
